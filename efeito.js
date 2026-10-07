@@ -1,10 +1,1 @@
-
-var btn = document.querySelector(".button");
-
-btn.onmousemove = function(e){
-    var x = e.pageX - btn.offsetLeft;
-    var y = e.pageY - btn.offsetTop;
-
-    btn.style.setProperty('--eixoX', x + 'px')
-    btn.style.setProperty('--eixoY', y + 'px')
-}
+const button=document.querySelector('.button');const feedback=document.querySelector('#feedback');button.addEventListener('pointermove',event=>{const rect=button.getBoundingClientRect();button.style.setProperty('--x',`${event.clientX-rect.left}px`);button.style.setProperty('--y',`${event.clientY-rect.top}px`)});button.addEventListener('click',()=>{feedback.textContent='Interação concluída.'});
